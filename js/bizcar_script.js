@@ -1,3 +1,46 @@
+// nav
+let gnbs = document.querySelectorAll('.gnb li');
+let hovMwrap = document.querySelector('.hover_menu_wrap');
+let hovMenus = document.querySelectorAll('.hover_menu_wrap ul');
+
+gnbs.forEach(function(gnb,i){
+	gnb.addEventListener('mouseover',function(){
+		for(let j=0;j<gnbs.length;j++){
+			hovMenus[j].style.display = 'none';
+			hovMwrap.style.display = 'none';
+		}
+		hovMenus[i].style.display = 'flex';
+		hovMwrap.style.display = 'flex';
+	})
+	gnb.addEventListener('mouseout',function(){
+		for(let j=0;j<gnbs.length;j++){
+			hovMenus[j].style.display = 'flex';
+			hovMwrap.style.display = 'flex';
+		}
+		hovMenus[i].style.display = 'none';
+		hovMwrap.style.display = 'none';
+	})
+})
+
+hovMenus.forEach(function(hovMenu,i){
+	hovMenu.addEventListener('mouseover',function(){
+		for(let j=0;j<hovMenus.length;j++){
+			hovMenus[j].style.display = 'none';
+			hovMwrap.style.display = 'none';
+		}
+		hovMenus[i].style.display = 'flex';
+		hovMwrap.style.display = 'flex';
+	})
+	hovMenu.addEventListener('mouseout',function(){
+		for(let j=0;j<hovMenus.length;j++){
+			hovMenus[j].style.display = 'flex';
+			hovMwrap.style.display = 'flex';
+		}
+		hovMenus[i].style.display = 'none';
+		hovMwrap.style.display = 'none';
+	})
+	})
+
 // 햄버튼 클릭
 function ham_click(){
 	document.getElementById('ham1').classList.toggle('ham1top');
@@ -5,45 +48,6 @@ function ham_click(){
 	document.getElementById('ham3').classList.toggle('ham3down');
 	document.getElementById('hamDown').classList.toggle('open');
 }
-
-//nav
-let gnbs = document.querySelectorAll('.gnb>li');
-let sub1s = document.querySelectorAll('.sub1');
-let sub2s= document.querySelectorAll('.sub2');
-let twos = document.querySelectorAll('.two');
-let bg = document.querySelector('.nav_bg')
-
-gnbs.forEach(function(gnb,i){
-    gnb.addEventListener('mouseover',function(){
-        for(let j=0;j<gnbs.length;j++){
-            sub1s[j].style.display='none'
-        }
-        sub1s[i].style.display='flex'
-		bg.style.display='block'
-    })
-    gnb.addEventListener('mouseout',function(){
-        for(let j=0;j<gnbs.length;j++){
-            sub1s[j].style.display='none'
-        }
-        sub1s[i].style.display='none'
-		bg.style.display='none'
-    })
-})
-
-twos.forEach(function(two,i){
-    two.addEventListener('mouseover',function(){
-        for(let j=0;j<twos.length;j++){
-            sub2s[j].style.display='none'
-        }
-        sub2s[i].style.display='block'
-    })
-    two.addEventListener('mouseout',function(){
-        for(let j=0;j<twos.length;j++){
-            sub2s[j].style.display='none'
-        }
-        sub2s[i].style.display='none'
-    })
-})
 
 //3deps 메뉴
 let subs = document.querySelectorAll('.subs')
